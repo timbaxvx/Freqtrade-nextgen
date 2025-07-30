@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  frontend:
+    build: ../frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+  backend:
+    build: ../backend
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=sk-...
+      - DATABASE_URL=postgresql://user:password@db:5432/freqtrade_db
+    depends_on:
+      - db
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=freqtrade_db
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+volumes:
+  postgres_data:

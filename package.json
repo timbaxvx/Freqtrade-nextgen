@@ -1,0 +1,28 @@
+{
+  "name": "freqtrade-nextgen",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=frontend",
+    "build": "npm run build --workspace=frontend",
+    "start": "npm run start --workspace=frontend",
+    "lint": "npm run lint --workspace=frontend"
+  },
+  "dependencies": {
+    "reactflow": "^11.11.4",
+    "recharts": "^3.1.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
+    "@testing-library/jest-dom": "^6.6.4",
+    "@testing-library/react": "^16.3.0",
+    "babel-jest": "^30.0.5",
+    "jest": "^30.0.5"
+  }
+}
